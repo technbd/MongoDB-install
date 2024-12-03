@@ -253,6 +253,31 @@ Build Info: {
 }
 ```
 
+### Install MongoDB v4.4:
+
+Create a `mongodb.repo` file so that you can install MongoDB directly using `yum`:
+
+```
+vim /etc/yum.repos.d/mongodb.repo
+
+[mongodb-org-4.4]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/4.4/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-4.4.asc
+```
+
+
+```
+yum install -y mongodb-org
+```
+
+
+```
+systemctl start mongod
+```
+
 
 
 
