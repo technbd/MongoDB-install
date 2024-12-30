@@ -1,0 +1,15 @@
+[Unit]
+Description=MongoDB Database Server
+After=network.target
+
+[Service]
+User=rcms
+Group=rcms
+
+ExecStart=/mongodb/6.0.17/mongodb-6.0.17/bin/mongod --config /mongodb/6.0.17/mongodb-6.0.17/mongod.conf
+
+LimitNOFILE=64000
+
+[Install]
+WantedBy=multi-user.target
+
